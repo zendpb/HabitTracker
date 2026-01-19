@@ -240,6 +240,7 @@ fun DetailAnalyticsDialog(habit: Habit, completions: List<HabitCompletion>, onDi
 
 @Composable
 fun HabitHeatMap(habitColor: Color, completions: List<HabitCompletion>) {
+<<<<<<< HEAD
     val completedDates = remember(completions) {
         completions.map {
             val c = Calendar.getInstance().apply { timeInMillis = it.date }
@@ -301,6 +302,49 @@ fun HabitHeatMap(habitColor: Color, completions: List<HabitCompletion>) {
                                 )
                         )
                     }
+=======
+    val completedDates = completions.map {
+        val c = Calendar.getInstance().apply { timeInMillis = it.date }
+        c.get(Calendar.DAY_OF_YEAR) to c.get(Calendar.YEAR)
+    }.toSet()
+
+    Row(
+        modifier = Modifier.fillMaxWidth(),
+        horizontalArrangement = Arrangement.spacedBy(4.dp)
+    ) {
+        for (week in 0 until 5) {
+            Column(
+                modifier = Modifier.weight(1f),
+                verticalArrangement = Arrangement.spacedBy(4.dp)
+            ) {
+                for (dayInWeek in 0 until 7) {
+                    val dayIndex = (week * 7) + dayInWeek
+
+                    val checkCal = Calendar.getInstance().apply {
+                        set(Calendar.HOUR_OF_DAY, 0)
+                        set(Calendar.MINUTE, 0)
+                        set(Calendar.SECOND, 0)
+                        set(Calendar.MILLISECOND, 0)
+                        add(Calendar.DAY_OF_YEAR, -(34 - dayIndex))
+                    }
+
+                    val isChecked = completedDates.contains(
+                        checkCal.get(Calendar.DAY_OF_YEAR) to checkCal.get(Calendar.YEAR)
+                    )
+
+                    Box(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .aspectRatio(1f)
+                            .clip(RoundedCornerShape(4.dp))
+                            .background(if (isChecked) habitColor else habitColor.copy(alpha = 0.15f))
+                            .border(
+                                width = 1.dp,
+                                color = if (isChecked) Color.Transparent else Color.LightGray.copy(alpha = 0.2f),
+                                shape = RoundedCornerShape(4.dp)
+                            )
+                    )
+>>>>>>> 009bd5644f5e1e81505d2866144a4d179b685ccc
                 }
             }
         }

@@ -1,5 +1,6 @@
 package com.example.habittracker
 
+<<<<<<< HEAD
 import com.example.habittracker.data.entity.Habit
 import com.example.habittracker.logic.LevelManager
 import org.junit.Test
@@ -82,5 +83,20 @@ class HabitTrackerLogicTest {
         val weakestDay = completionsCount.minByOrNull { it.value }?.key
 
         assertEquals(Calendar.TUESDAY, weakestDay)
+=======
+import org.junit.Test
+
+import org.junit.Assert.*
+
+/**
+ * Example local unit test, which will execute on the development machine (host).
+ *
+ * See [testing documentation](http://d.android.com/tools/testing).
+ */
+class ExampleUnitTest {
+    @Test
+    fun addition_isCorrect() {
+        assertEquals(4, 2 + 2)
+>>>>>>> 009bd5644f5e1e81505d2866144a4d179b685ccc
     }
 }
