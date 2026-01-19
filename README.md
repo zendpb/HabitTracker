@@ -18,11 +18,7 @@
 
 1. Клонируйте репозиторий:
 ```
-<<<<<<< HEAD
-git clone https://github.com/yourusername/habit-tracker.git
-=======
-git clone https://github.com/zendpb/HabitTracker
->>>>>>> 009bd5644f5e1e81505d2866144a4d179b685ccc
+https://github.com/zendpb/HabitTracker
 ```
 2. Откройте проект в Android Studio.
 3. Дождитесь окончания синхронизации Gradle.
