@@ -13,6 +13,10 @@
 
 * Android SDK 26+ (Android 8.0+)
 * Android Studio Hedgehog (или новее)
+* Android Gradle Plugin 8.1.4
+* Gradle Version 8.2
+* Java Version 1.8 (Java 8)
+* JDK JetBrains Runtime version 17.0.7
 
 ### Сборка и запуск
 
